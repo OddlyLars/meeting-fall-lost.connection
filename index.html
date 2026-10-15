@@ -40,24 +40,29 @@
       margin-bottom: 20px;
     }
 
-    video {
-      width: 100%;
-      max-width: 600px;
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
       border: 1px solid #222;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     }
 
-    /* Hidden secret text style */
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+    }
+
     .hidden-clue {
       margin-top: 30px;
-      color: #050505; /* Matches background so it's invisible until highlighted */
+      color: #050505; /* Matches background so it's invisible until hovered */
       font-size: 0.8rem;
       cursor: default;
       transition: color 0.3s;
     }
 
     .hidden-clue:hover {
-      color: #333; /* Becomes faintly visible on hover */
+      color: #333; /* Becomes visible on hover */
     }
   </style>
 </head>
@@ -68,15 +73,14 @@
   <div class="container">
     <h1>[ FILE LOADED: SUCCESS ]</h1>
     
-    <!-- Video Player linked to cassettekevin.mp4 -->
-    <video controls preload="metadata">
-      <source src="cassettekevin.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <!-- YouTube Embed Player -->
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/M53iQHE7nlc" title="Transmission" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
     <!-- Hidden ARG element -->
     <div class="hidden-clue">
-      they are still listening. don't look behind you.
+      it's listening.
     </div>
   </div>
 
